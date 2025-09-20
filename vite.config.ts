@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 
@@ -28,5 +29,10 @@ export default defineConfig({
   },
   optimizeDeps: {
     include: ['@mediapipe/hands', '@mediapipe/camera_utils', '@mediapipe/drawing_utils'],
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./src/test/setup.ts'],
   },
 });
