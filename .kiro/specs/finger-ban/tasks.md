@@ -46,8 +46,8 @@
   - Create unit tests with mock landmark data
   - _Requirements: 1.1, 1.2_
 
-- [ ] 6. Implement Gesture Classification logic
-- [ ] 6.1 Create gesture analysis algorithms
+- [x] 6. Implement Gesture Classification logic
+- [x] 6.1 Create gesture analysis algorithms
 
   - Write finger position analysis functions using landmark geometry
   - Implement middle finger gesture detection based on finger angles and positions
@@ -55,7 +55,7 @@
   - Create comprehensive unit tests with various hand positions
   - _Requirements: 1.2, 1.3_
 
-- [ ] 6.2 Implement bounding box calculation
+- [x] 6.2 Implement bounding box calculation
 
   - Write functions to calculate bounding boxes around detected gestures
   - Add margin calculation for censorship area coverage
