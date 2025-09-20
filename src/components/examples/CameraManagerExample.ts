@@ -34,7 +34,7 @@ export class CameraManagerExample {
       this.updateStatus('Requesting camera access...', 'info');
 
       // Initialize camera
-      const stream = await this.cameraManager.initialize();
+      await this.cameraManager.initialize();
       
       // Add video element to container
       const videoElement = this.cameraManager.getVideoElement();

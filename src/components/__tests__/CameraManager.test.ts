@@ -2,7 +2,7 @@
  * Unit tests for Camera Manager component
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi, Mock } from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { CameraManager, CameraError } from '../CameraManager';
 
 // Mock MediaDevices API

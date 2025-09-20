@@ -14,6 +14,19 @@ Object.defineProperty(window, 'MediaStream', {
   }))
 });
 
+// Mock ImageData constructor
+global.ImageData = class ImageData {
+  data: Uint8ClampedArray;
+  width: number;
+  height: number;
+
+  constructor(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+    this.data = new Uint8ClampedArray(width * height * 4);
+  }
+} as any;
+
 // Mock HTMLVideoElement methods
 Object.defineProperty(HTMLVideoElement.prototype, 'play', {
   writable: true,

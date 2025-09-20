@@ -71,7 +71,7 @@ export class CameraManager implements ICameraManager {
           resolve();
         };
 
-        const onError = (event: Event) => {
+        const onError = (_event: Event) => {
           this.videoElement.removeEventListener('loadedmetadata', onLoadedMetadata);
           this.videoElement.removeEventListener('error', onError);
           reject(new Error('Failed to load video stream'));

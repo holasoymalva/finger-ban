@@ -40,6 +40,10 @@ export interface PerformanceMonitor {
   getFPS(): number;
   getAverageProcessingTime(): number;
   shouldReduceQuality(): boolean;
+  shouldProcessFrame(): boolean;
+  getMetrics(): PerformanceMetrics;
+  setTargetFPS(fps: number): void;
+  reset(): void;
 }
 
 export interface PerformanceMetrics {
