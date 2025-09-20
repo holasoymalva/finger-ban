@@ -5,12 +5,124 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finger Ban - Real-time Gesture Censorship</title>
     <meta name="description" content="Real-time gesture detection and censorship system" />
+    <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
     <div id="app">
-      <h1>Finger Ban</h1>
-      <p>Loading...</p>
+      <header class="app-header">
+        <h1>Finger Ban</h1>
+        <p class="app-description">Sistema de censura de gestos en tiempo real</p>
+      </header>
+
+      <main class="app-main">
+        <!-- Status indicators -->
+        <div class="status-panel">
+          <div class="status-item">
+            <span class="status-label">Cámara:</span>
+            <span id="camera-status" class="status-value status-inactive">Inactiva</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">Detección:</span>
+            <span id="detection-status" class="status-value status-inactive">Inactiva</span>
+          </div>
+          <div class="status-item">
+            <span class="status-label">FPS:</span>
+            <span id="fps-counter" class="status-value">0</span>
+          </div>
+        </div>
+
+        <!-- Video processing area -->
+        <div class="video-container">
+          <!-- Input video from camera (hidden) -->
+          <video 
+            id="input-video" 
+            class="video-element" 
+            autoplay 
+            muted 
+            playsinline
+            style="display: none;">
+          </video>
+
+          <!-- Processing canvas (hidden) -->
+          <canvas 
+            id="processing-canvas" 
+            class="processing-canvas"
+            style="display: none;">
+          </canvas>
+
+          <!-- Output canvas (visible to user) -->
+          <canvas 
+            id="output-canvas" 
+            class="output-canvas">
+          </canvas>
+
+          <!-- Video overlay for UI elements -->
+          <div class="video-overlay">
+            <div id="loading-indicator" class="loading-indicator">
+              <div class="spinner"></div>
+              <span>Cargando modelo...</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Control panel -->
+        <div class="control-panel">
+          <button id="start-camera-btn" class="btn btn-primary">
+            <span class="btn-icon">📹</span>
+            Activar Cámara
+          </button>
+          
+          <button id="stop-camera-btn" class="btn btn-secondary" disabled>
+            <span class="btn-icon">⏹️</span>
+            Detener Cámara
+          </button>
+
+          <div class="control-group">
+            <label for="pixelation-level" class="control-label">
+              Nivel de Pixelado:
+            </label>
+            <input 
+              type="range" 
+              id="pixelation-level" 
+              class="slider"
+              min="5" 
+              max="50" 
+              value="20"
+              disabled>
+            <span id="pixelation-value" class="control-value">20px</span>
+          </div>
+
+          <div class="control-group">
+            <label for="detection-threshold" class="control-label">
+              Umbral de Detección:
+            </label>
+            <input 
+              type="range" 
+              id="detection-threshold" 
+              class="slider"
+              min="50" 
+              max="95" 
+              value="70"
+              disabled>
+            <span id="threshold-value" class="control-value">70%</span>
+          </div>
+        </div>
+
+        <!-- Error messages -->
+        <div id="error-panel" class="error-panel" style="display: none;">
+          <div class="error-content">
+            <span class="error-icon">⚠️</span>
+            <span id="error-message" class="error-message"></span>
+            <button id="dismiss-error" class="btn btn-small">Cerrar</button>
+          </div>
+        </div>
+      </main>
+
+      <footer class="app-footer">
+        <p>Procesamiento local - Sin datos enviados a servidores externos</p>
+      </footer>
     </div>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
