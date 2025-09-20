@@ -30,15 +30,15 @@
   - Write tests for frame processing pipeline
   - _Requirements: 1.4, 5.1, 5.2_
 
-- [ ] 5. Integrate MediaPipe Hands detection
-- [ ] 5.1 Set up MediaPipe Hands model loading
+- [x] 5. Integrate MediaPipe Hands detection
+- [x] 5.1 Set up MediaPipe Hands model loading
 
   - Install and configure MediaPipe Hands library
   - Implement model initialization and loading with progress indicators
   - Add error handling for model loading failures with retry logic
   - _Requirements: 1.1, 4.1_
 
-- [ ] 5.2 Implement hand landmark detection
+- [x] 5.2 Implement hand landmark detection
 
   - Write HandDetectionEngine class using MediaPipe Hands
   - Process video frames to extract hand landmarks
