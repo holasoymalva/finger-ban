@@ -357,7 +357,7 @@ describe('BoundingBoxCalculator', () => {
         [{ x: 0.8, y: 0.8, z: 0 }, { x: 0.9, y: 0.9, z: 0 }]  // Bottom-right
       ];
 
-      positions.forEach((landmarks, index) => {
+      positions.forEach((landmarks) => {
         const result = calculator.calculateFromLandmarks(landmarks, 0.7);
         expect(result.width).toBeGreaterThan(0);
         expect(result.height).toBeGreaterThan(0);

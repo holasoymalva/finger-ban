@@ -50,13 +50,11 @@ export class GestureClassifier implements IGestureClassifier {
 
     // MediaPipe hand landmark indices
     const WRIST = 0;
-    const THUMB_TIP = 4;
     const INDEX_TIP = 8;
     const MIDDLE_TIP = 12;
     const RING_TIP = 16;
     const PINKY_TIP = 20;
     
-    const THUMB_MCP = 2;
     const INDEX_MCP = 5;
     const MIDDLE_MCP = 9;
     const RING_MCP = 13;
@@ -64,7 +62,6 @@ export class GestureClassifier implements IGestureClassifier {
 
     try {
       // Calculate finger extensions
-      const thumbExtended = this.isFingerExtended(landmarks, THUMB_MCP, THUMB_TIP, WRIST);
       const indexExtended = this.isFingerExtended(landmarks, INDEX_MCP, INDEX_TIP, WRIST);
       const middleExtended = this.isFingerExtended(landmarks, MIDDLE_MCP, MIDDLE_TIP, WRIST);
       const ringExtended = this.isFingerExtended(landmarks, RING_MCP, RING_TIP, WRIST);
