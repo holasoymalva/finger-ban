@@ -266,7 +266,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Made with ❤️ in Silicon Valley**
+**Made with ❤️ like a Silicon Valley Project**
 
 *Revolutionizing content moderation, one gesture at a time.*
 
